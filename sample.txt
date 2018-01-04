@@ -1,0 +1,18 @@
+SEL-597 - Multi-Domain custom error pages
+
+---------------
+
+  <Directory >
+    <IfModule disp_apache2.c>
+      SetHandler dispatcher-handler
+      ModMimeUsePathInfo On
+    </IfModule>
+    Options FollowSymLinks
+    AllowOverride None
+    ErrorDocument 404 /error_404.html
+    Header set Cache-Control "max-age=30, public"
+  </Directory> 
+  
+  
+     ErrorDocument 404 /404india.html
+    #ErrorDocument <ANY OTHER ERROR CODE>  <PATH IN YOUR DOCROOT
