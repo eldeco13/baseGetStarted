@@ -19,15 +19,12 @@
     <groupId>myHTL63</groupId>
     <artifactId>myHTL63</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <description>myHTL63</description>
     
     <modules>
         <module>core</module>
         <module>ui.apps</module>
-        <module>ui.content</module>
-        <module>it.tests</module>
-        <module>it.launcher</module>
     </modules>
 
     <properties>
