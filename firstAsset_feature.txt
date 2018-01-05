@@ -1,0 +1,25 @@
+
+/* globals hobs */
+(function(window, hobs) {
+    'use strict';
+
+    var DEBUG = false;
+
+    var selectors = {
+                repo_path: '#repository-path'
+    };
+
+
+    new hobs.TestSuite('Check correct JCR Path',
+        {path: '/apps/discovery/tests/verify-jcr-path.js', register: true})
+
+        .addTestCase(new hobs.TestCase('Check JCR Paths exist', {demoMode: DEBUG})
+            .navigateTo('/crx/de/index.jsp#/apps/discovery')
+    		.asserts.exists("#repository-path", true, {timeout: 10000})
+            .asserts.isTrue(function() {
+
+                return hobs.find("#repository-path").context.URL == hobs.find("#repository-path").context.origin+"/crx/de/index.jsp#/apps/discovery";
+            })
+        );
+
+}(window, hobs));
